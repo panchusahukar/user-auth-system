@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>User Auth</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      width: 80%;
+      margin: 30px auto;
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+    }
+    nav {
+      background: #333;
+      padding: 10px;
+    }
+    nav a {
+      color: #fff;
+      margin-right: 15px;
+      text-decoration: none;
+    }
+    .success {
+      color: green;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="/login">Login</a>
+    <a href="/register">Register</a>
+    <a href="/dashboard">Dashboard</a>
+    <a href="/logout">Logout</a>
+  </nav>
+
+  <div class="container">
+    <% if (success_msg) { %>
+      <p class="success"><%= success_msg %></p>
+    <% } %>
+
+    <% if (error_msg) { %>
+      <p class="error"><%= error_msg %></p>
+    <% } %>
+
+    <% if (error) { %>
+      <p class="error"><%= error %></p>
+    <% } %>
+
+    <%- body %>
+  </div>
+</body>
+</html>
